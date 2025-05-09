@@ -1,0 +1,20 @@
+#Исполняемый файл
+/GolubRun
+
+# Настройки VS Code
+.vscode/
+.clang-format
+.editorconfig
+
+# Системные
+.DS_Store
+Thumbs.db
+
+# Папка obj
+obj/
+
+# Корки
+*.out
+
+# Сохранения
+*.FireForestSouls-GolubRun
