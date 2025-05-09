@@ -12,7 +12,6 @@ class PC_Mouse
 {
 
 	private:
-
 		static PC_Mouse* class_obj;
 
 		PC_Mouse ();
@@ -40,7 +39,6 @@ class PC_Mouse
 		bool b_pressed;
 
 	public:
-
 		static PC_Mouse* getClass ();
 
 		static void main ();
@@ -52,7 +50,6 @@ class PC_Mouse
 		static RectangleShape getHitBox ();
 
 		static bool isLeftPressed ();
-
 };
 
 #endif

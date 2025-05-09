@@ -4,24 +4,24 @@
 
 PC_Mouse* PC_Mouse::class_obj = 0;
 
-PC_Mouse::PC_Mouse () :
-		V2f_mouse_size (1, 2),
+PC_Mouse::PC_Mouse ()
+    : V2f_mouse_size (1, 2),
 
-		u_outline_scale (1),
+      u_outline_scale (1),
 
-		string_obj ("PCM/hitbox/mouse"),
+      string_obj ("PCM/hitbox/mouse"),
 
-		color_obj (names::C_font_hitbox),
-				color_null (0, 0, 0, 0),
+      color_obj (names::C_font_hitbox),
+      color_null (0, 0, 0, 0),
 
-				f_font_scale (names::f_font_hitbox_scale),
-				f_lifting_text (names::f_lifting_hitbox_text),
-				f_time_since_clic (0.0),
+      f_font_scale (names::f_font_hitbox_scale),
+      f_lifting_text (names::f_lifting_hitbox_text),
+      f_time_since_clic (0.0),
 
-				text_obj (string_obj, names::F_pixel, f_font_scale),
+      text_obj (string_obj, names::F_pixel, f_font_scale),
 
-				b_double_pressed (false),
-				b_pressed (false)
+      b_double_pressed (false),
+      b_pressed (false)
 
 {
 	rectangle_shape_obj.setSize (V2f_mouse_size);
@@ -30,7 +30,6 @@ PC_Mouse::PC_Mouse () :
 	rectangle_shape_obj.setOutlineColor (color_obj);
 
 	text_obj.setFillColor (color_obj);
-
 }
 
 PC_Mouse* PC_Mouse::getClass ()
@@ -49,12 +48,12 @@ void PC_Mouse::main ()
 	float f = WindowAndStyles::getFactorY ();
 
 	PCM_->rectangle_shape_obj.setPosition (PCM_->mouse_obj.getPosition (W_).x,
-			PCM_->mouse_obj.getPosition (W_).y);
+	                                       PCM_->mouse_obj.getPosition (W_).y);
 	PCM_->rectangle_shape_obj.setScale (f, f);
 
 	PCM_->text_obj.setCharacterSize (PCM_->f_font_scale * f);
 	PCM_->text_obj.setPosition (PCM_->rectangle_shape_obj.getPosition ().x + PCM_->rectangle_shape_obj.getGlobalBounds ().width * 0.5 - PCM_->text_obj.getGlobalBounds ().width * 0.5,
-			PCM_->rectangle_shape_obj.getPosition ().y - PCM_->text_obj.getGlobalBounds ().height * PCM_->f_lifting_text);
+	                            PCM_->rectangle_shape_obj.getPosition ().y - PCM_->text_obj.getGlobalBounds ().height * PCM_->f_lifting_text);
 
 	if (Mouse::isButtonPressed (Mouse::Left))
 	{

@@ -12,7 +12,6 @@ class Button
 {
 
 	protected:
-
 		RectangleShape rectangle_shape_obj;
 
 		Text text_obj;
@@ -20,7 +19,6 @@ class Button
 		Color C_outline;
 
 	public:
-
 		Button ();
 		Button (const string&);
 

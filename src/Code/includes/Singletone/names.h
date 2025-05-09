@@ -12,7 +12,7 @@
 using namespace std;
 using namespace sf;
 
-//start
+// start
 
 enum GameStatus
 {
@@ -23,7 +23,6 @@ enum GameStatus
 class names
 {
 	public:
-
 		static bool b_hitboxes_is_drawn;
 		static bool b_shader_is_on;
 

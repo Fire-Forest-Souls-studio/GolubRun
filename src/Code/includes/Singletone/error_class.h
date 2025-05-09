@@ -24,18 +24,16 @@ enum e_error_text
 class Error_class
 {
 	private:
-
 		static Error_class* class_obj;
 
 		Error_class ();
 
 	protected:
-
 		RectangleShape rectangle_shape_obj;
 
-		vector <Text> text_obj;
+		vector<Text> text_obj;
 
-		vector <wstring> wstring_obj;
+		vector<wstring> wstring_obj;
 
 		bool b_error;
 
@@ -53,7 +51,6 @@ class Error_class
 		static void main_transform ();
 
 	public:
-
 		static Error_class* getClass ();
 
 		static void main ();
@@ -63,7 +60,7 @@ class Error_class
 		static void ec_error_LFM_Svus (unsigned long ul, const string& s);
 		static void ec_error_LFM_Sss (const string&, const string&);
 
-		static vector <Text>& getText ();
+		static vector<Text>& getText ();
 		static RectangleShape& getRectangleShape ();
 };
 

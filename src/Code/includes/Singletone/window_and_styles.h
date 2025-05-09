@@ -10,18 +10,17 @@
 using namespace sf;
 using namespace std;
 
-//start
+// start
 
 enum StyleWindow
 {
-	Default = 0,  //0
-	Fullscreen    //1
+	Default = 0, // 0
+	Fullscreen   // 1
 };
 
 class WindowAndStyles
 {
 	private:
-
 		static WindowAndStyles* class_obj;
 
 		WindowAndStyles ();
@@ -60,11 +59,9 @@ class WindowAndStyles
 		static void draw (const Button&);
 
 	protected:
-
 		static WindowAndStyles* getClass ();
 
 	public:
-
 		static void start ();
 		static void main ();
 		static void clear ();
@@ -84,7 +81,6 @@ class WindowAndStyles
 		static FloatRect getGlobalBounds ();
 
 		static Color getDefoultColor ();
-
 };
 
 #endif /* WINDOW_AND_STYLES_H_ */

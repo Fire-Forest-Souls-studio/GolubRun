@@ -105,8 +105,7 @@ void names::SetXCenterPosition (Text& T, const float& f)
 }
 void names::SetXCenterPosition (RectangleShape& RS, float f)
 {
-	RS.setPosition (WindowAndStyles::getGlobalBounds ().left + WindowAndStyles::getGlobalBounds ().width * 0.5
-			- RS.getGlobalBounds ().width * 0.5, f);
+	RS.setPosition (WindowAndStyles::getGlobalBounds ().left + WindowAndStyles::getGlobalBounds ().width * 0.5 - RS.getGlobalBounds ().width * 0.5, f);
 }
 void names::SetPath (char* argv)
 {
@@ -114,7 +113,7 @@ void names::SetPath (char* argv)
 #ifdef SFML_SYSTEM_LINUX
 	s_path = argv_str.substr (0, argv_str.find_last_of ("/"));
 #else
-    s_path = argv_str.substr(0, argv_str.find_last_of("\\"));
+	s_path = argv_str.substr (0, argv_str.find_last_of ("\\"));
 #endif
 	s_path += "/";
 }
@@ -156,7 +155,7 @@ wstring names::GetStringOfHyphenation (const wstring& w, int i)
 			i_cout = 0;
 			st -= 1;
 		}
-		else if (not (i_cout == 0 and w[st] == L' '))
+		else if (not(i_cout == 0 and w[st] == L' '))
 		{
 			w0 += w[st];
 			i_cout++;
