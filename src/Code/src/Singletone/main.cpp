@@ -1,3 +1,5 @@
+//TODO: добавить лицензию
+
 #include "../../includes/Singletone/names.h"
 #include "../../includes/Singletone/pc_mouse.h"
 #include "../../includes/Singletone/window_and_styles.h"
