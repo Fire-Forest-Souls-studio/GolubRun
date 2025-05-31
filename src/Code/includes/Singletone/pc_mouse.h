@@ -12,31 +12,31 @@ class PC_Mouse
 {
 
 	private:
-		static PC_Mouse* class_obj;
+		static PC_Mouse* m_class_obj;
 
 		PC_Mouse ();
 
-		RectangleShape rectangle_shape_obj;
+		RectangleShape m_rectangle_shape;
 
-		Vector2f V2f_mouse_size;
+		Vector2f m_V2f_mouse_size;
 
-		unsigned u_outline_scale;
+		unsigned m_u_outline_scale;
 
-		string string_obj;
+		string m_string;
 
-		Mouse mouse_obj;
+		Mouse m_mouse;
 
-		Color color_obj;
-		Color color_null;
+		Color m_color;
+		Color m_color_null;
 
-		float f_font_scale;
-		float f_lifting_text;
-		float f_time_since_clic;
+		float m_f_font_scale;
+		float m_f_lifting_text;
+		float m_f_time_since_clic;
 
-		Text text_obj;
+		Text m_text;
 
-		bool b_double_pressed;
-		bool b_pressed;
+		bool m_b_double_pressed;
+		bool m_b_pressed;
 
 	public:
 		static PC_Mouse* getClass ();

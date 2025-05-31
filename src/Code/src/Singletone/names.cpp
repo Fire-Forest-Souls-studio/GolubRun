@@ -13,7 +13,7 @@ Clock names::C_clock;
 Event names::E_event;
 
 float names::f_time (0);
-float names::microsec (0.001);
+float names::f_microsec (0.001);
 float names::f_font_hitbox_scale (2.5);
 float names::f_lifting_hitbox_text (2.5);
 

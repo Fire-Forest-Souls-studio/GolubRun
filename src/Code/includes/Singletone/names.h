@@ -31,7 +31,7 @@ class names
 		static Event E_event;
 
 		static float f_time;
-		static float microsec;
+		static float f_microsec;
 		static float f_font_hitbox_scale;
 		static float f_lifting_hitbox_text;
 

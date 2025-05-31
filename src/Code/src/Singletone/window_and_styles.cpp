@@ -7,7 +7,7 @@
 
 // private
 
-WindowAndStyles* WindowAndStyles::class_obj = NULL;
+WindowAndStyles* WindowAndStyles::m_class_obj = NULL;
 
 WindowAndStyles::WindowAndStyles ()
     : f_size_pix (300.0, 150.0),
@@ -43,7 +43,7 @@ void WindowAndStyles::main_F11 ()
 {
 	WindowAndStyles* WAS_ = getClass ();
 
-	WAS_->m_f_time_since_clicking += names::microsec * names::f_time;
+	WAS_->m_f_time_since_clicking += names::f_microsec * names::f_time;
 
 	if (Keyboard::isKeyPressed (Keyboard::F11) and WAS_->m_f_time_since_clicking > 1.0 and WAS_->window_obj.hasFocus ())
 	{
@@ -192,11 +192,11 @@ void WindowAndStyles::clear_display ()
 
 WindowAndStyles* WindowAndStyles::getClass ()
 {
-	if (class_obj)
-		return class_obj;
+	if (m_class_obj)
+		return m_class_obj;
 
-	class_obj = new WindowAndStyles ();
-	return class_obj;
+	m_class_obj = new WindowAndStyles ();
+	return m_class_obj;
 }
 
 // void

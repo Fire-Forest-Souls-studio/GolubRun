@@ -21,7 +21,7 @@ enum StyleWindow
 class WindowAndStyles
 {
 	private:
-		static WindowAndStyles* class_obj;
+		static WindowAndStyles* m_class_obj;
 
 		WindowAndStyles ();
 

@@ -24,28 +24,28 @@ enum e_error_text
 class Error_class
 {
 	private:
-		static Error_class* class_obj;
+		static Error_class* m_class_obj;
 
 		Error_class ();
 
 	protected:
-		RectangleShape rectangle_shape_obj;
+		RectangleShape m_rectangle_shape;
 
-		vector<Text> text_obj;
+		vector<Text> m_text;
 
-		vector<wstring> wstring_obj;
+		vector<wstring> m_wstring;
 
-		bool b_error;
+		bool m_b_error;
 
-		Color C_rectangle_shape_color;
-		Color C_outline_color;
-		Color C_text_color;
+		Color m_C_rectangle_shape_color;
+		Color m_C_outline_color;
+		Color m_C_text_color;
 
-		unsigned u_font_scale;
+		unsigned m_u_font_scale;
 
-		float f_frame;
-		float f_animation_speed;
-		float f_time_to_destroy;
+		float m_f_frame;
+		float m_f_animation_speed;
+		float m_f_time_to_destroy;
 
 		static void main_transition ();
 		static void main_transform ();

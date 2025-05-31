@@ -2,10 +2,10 @@
 
 void ImageButton::setTexture ()
 {
-	m_rectangle_shape.setTexture (&texture_obj);
+	m_rectangle_shape.setTexture (&m_texture);
 }
 
 Texture& ImageButton::getTexture ()
 {
-	return texture_obj;
+	return m_texture;
 }
