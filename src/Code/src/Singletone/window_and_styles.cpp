@@ -2,6 +2,7 @@
 #include "../../includes/Singletone/names.h"
 #include "../../includes/Singletone/pc_mouse.h"
 #include "../../includes/Singletone/error_class.h"
+#include "../../includes/Singletone/introduction.h"
 
 #include "../../../GetPixels/GPI.h"
 
@@ -157,6 +158,11 @@ void WindowAndStyles::clear_draw ()
 	vector<Text>& T_ = Error_class::getText ();
 
 	// boxes
+
+    if (names::game_status == GameStatus::introduction)
+    {
+        WAS_->render_texture_obj.draw(Introduction::getRender());
+    }
 
 	// hitboxes
 
