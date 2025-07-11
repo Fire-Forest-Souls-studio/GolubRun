@@ -22,31 +22,9 @@ class WindowAndStyles
 {
 	private:
 		static WindowAndStyles* m_class_obj;
+		static WindowAndStyles* getClass ();
 
 		WindowAndStyles ();
-
-		Vector2f f_size_pix;
-
-		RectangleShape rectangle_shape_obj;
-
-		RenderWindow window_obj;
-
-		RenderTexture render_texture_obj;
-
-		StyleWindow now;
-
-		VideoMode videomode_obj;
-
-		View camera;
-
-		float m_f_time_since_clicking;
-
-		wstring w_game_name;
-
-		Color C_defolt_window;
-		Color C_clear_color;
-
-		Image image_obj;
 
 		static void main_time_work ();
 		static void main_F11 ();
@@ -59,13 +37,24 @@ class WindowAndStyles
 		static void draw (const Button&);
 
 	protected:
-		static WindowAndStyles* getClass ();
+		Vector2f m_V2f_size_pix;
+		RectangleShape m_rectangle_shape;
+		RenderWindow m_window;
+		RenderTexture m_render_texture;
+		StyleWindow m_SW_now;
+		VideoMode m_videomode;
+		View m_V_camera;
+		float m_f_time_since_clicking;
+		wstring m_w_game_name;
+		Color m_C_defolt_window;
+		Color m_C_clear_color;
+		Image m_image;
 
 	public:
 		static void start ();
 		static void main ();
 		static void clear ();
-		static void setColor (Color);
+		static void setColor (Color color);
 		static void close ();
 
 		static bool isOpen ();
