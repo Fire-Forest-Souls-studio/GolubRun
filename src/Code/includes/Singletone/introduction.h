@@ -32,6 +32,7 @@ class Introduction
 		static vector<float> m_f_animation_speed;
 		static RectangleShape m_rectangle_shape;
 		static float m_f_frame;
+        static Vector2u m_V2u_frame_size;
 
 	public:
 		static void start ();

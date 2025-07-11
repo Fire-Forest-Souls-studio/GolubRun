@@ -11,7 +11,7 @@
 WindowAndStyles* WindowAndStyles::m_class_obj = NULL;
 
 WindowAndStyles::WindowAndStyles ()
-    : f_size_pix (300.0, 150.0),
+    : f_size_pix (311.0, 175.0),
 
       rectangle_shape_obj (f_size_pix),
 
