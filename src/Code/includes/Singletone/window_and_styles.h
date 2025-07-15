@@ -49,6 +49,7 @@ class WindowAndStyles
 		Color m_C_defolt_window;
 		Color m_C_clear_color;
 		Image m_image;
+        Shader m_shader;
 
 	public:
 		static void start ();

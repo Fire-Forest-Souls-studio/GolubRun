@@ -21,7 +21,7 @@ WindowAndStyles::WindowAndStyles ()
 
       m_w_game_name (L"GolubRun 4"),
 
-      m_C_defolt_window (25, 25, 25, 255),
+      m_C_defolt_window (0, 0, 0, 255),
       m_C_clear_color (0, 0, 0, 255)
 {
 }
@@ -190,7 +190,19 @@ void WindowAndStyles::clear_display ()
 	Sprite S (WAS_->m_render_texture.getTexture ());
 	S.setScale (names::u_factor_of_resolution, names::u_factor_of_resolution);
 
-	WAS_->m_window.draw (S);
+	if (names::game_status == GameStatus::introduction)
+	{
+		WAS_->m_shader.setUniform ("texture", sf::Shader::CurrentTexture);
+		WAS_->m_shader.setUniform ("resolution", sf::Glsl::Vec2 (WAS_->m_render_texture.getSize ()));
+		WAS_->m_shader.setUniform ("threshold", 0.f);
+		WAS_->m_shader.setUniform ("radius", int (8 * getFactorY ()));
+		WAS_->m_shader.setUniform ("fadeInner", 0.3f * getFactorY ());
+		WAS_->m_shader.setUniform ("fadeOuter", 2.5f * getFactorY ());
+
+		WAS_->m_window.draw (S, &WAS_->m_shader);
+	}
+	else
+		WAS_->m_window.draw (S);
 	WAS_->m_window.display ();
 }
 
@@ -234,6 +246,8 @@ void WindowAndStyles::start ()
 	    static_cast<float> (WAS_->m_window.getSize ().y)));
 	WAS_->m_render_texture.setView (WAS_->m_V_camera);
 	WAS_->m_window.setView (WAS_->m_V_camera);
+
+	WAS_->m_shader.loadFromFile ("shader.frag", Shader::Fragment);
 }
 void WindowAndStyles::main ()
 {
