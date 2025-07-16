@@ -18,7 +18,7 @@ PC_Mouse::PC_Mouse ()
       m_f_lifting_text (names::f_lifting_hitbox_text),
       m_f_time_since_clic (0.0),
 
-      m_text (m_string, names::F_pixel, m_f_font_scale),
+      m_text (m_string, names::font, m_f_font_scale),
 
       m_b_double_pressed (false),
       m_b_pressed (false)

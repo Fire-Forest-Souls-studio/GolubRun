@@ -8,9 +8,9 @@
 bool names::b_hitboxes_is_drawn (false);
 bool names::b_shader_is_on (true);
 
-Clock names::C_clock;
+Clock names::clock;
 
-Event names::E_event;
+Event names::event;
 
 float names::f_time (0);
 float names::f_microsec (0.001);
@@ -19,9 +19,9 @@ float names::f_lifting_hitbox_text (2.5);
 
 Color names::C_font_hitbox (100, 250, 0, 255);
 
-Font names::F_pixel;
+Font names::font;
 
-unsigned names::u_factor_of_resolution (1);
+unsigned names::m_u_factor_of_resolution (1);
 
 GameStatus names::game_status (GameStatus::introduction);
 

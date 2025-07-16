@@ -26,9 +26,9 @@ class names
 		static bool b_hitboxes_is_drawn;
 		static bool b_shader_is_on;
 
-		static Clock C_clock;
+		static Clock clock;
 
-		static Event E_event;
+		static Event event;
 
 		static float f_time;
 		static float f_microsec;
@@ -37,25 +37,25 @@ class names
 
 		static Color C_font_hitbox;
 
-		static Font F_pixel;
+		static Font font;
 
-		static unsigned u_factor_of_resolution;
+		static unsigned m_u_factor_of_resolution;
 
 		static GameStatus game_status;
 
 		static string s_path;
 
-		static void LoadFromMemory (Texture&, void const*, unsigned long, const string&, bool b = false);
-		static void LoadFromMemory (Font&, void const*, unsigned long, const string&);
-		static void LoadFromMemory (Image&, void const*, unsigned long, const string&);
-		static void LoadFromMemory (SoundBuffer&, void const*, unsigned long, const string&);
-		static void LoadFromMemory (Shader&, const string&, const string&);
-		static void SetXCenterPosition (Text&, const float&);
-		static void SetXCenterPosition (RectangleShape&, float);
+		static void LoadFromMemory (Texture& texture, void const* data, unsigned long size, const string& resourcepack_path, bool two_tetures_for_shader = false);
+		static void LoadFromMemory (Font& font, void const* data, unsigned long size, const string& resourcepack_path);
+		static void LoadFromMemory (Image& image, void const* data, unsigned long size, const string& resourcepack_path);
+		static void LoadFromMemory (SoundBuffer& sound_buffer, void const* data, unsigned long size, const string& resourcepack_path);
+		static void LoadFromMemory (Shader& shader, const string& memory, const string& resourcepack_path);
+		static void SetXCenterPosition (Text& text, const float& y);
+		static void SetXCenterPosition (RectangleShape& rectangle, float y);
 		static void SetPath (char* argv);
 
-		static string GetStringOfHyphenation (const string&, int);
-		static wstring GetStringOfHyphenation (const wstring&, int);
+		static string GetStringOfHyphenation (const string& str, int symbols_in_line);
+		static wstring GetStringOfHyphenation (const wstring& str, int symbols_in_line);
 };
 
 #endif

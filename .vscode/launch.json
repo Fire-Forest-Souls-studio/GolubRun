@@ -1,26 +1,45 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Debug GolubRun",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${workspaceFolder}/GolubRun",
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": false,
-        "MIMode": "gdb",
-        "setupCommands": [
-          {
-            "description": "Enable pretty-printing",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": true
-          }
-        ],
-        "preLaunchTask": "build",   // Запускает make перед отладкой
-        "miDebuggerPath": "/usr/bin/gdb"
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug GolubRun",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/GolubRun",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/stepan/Projects/ProjectsVS/GolubRun/src/Code/src/Singletone",
+      "program": "/home/stepan/Projects/ProjectsVS/GolubRun/src/Code/src/Singletone/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

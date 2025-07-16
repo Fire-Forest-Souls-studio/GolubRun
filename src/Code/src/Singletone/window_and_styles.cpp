@@ -30,7 +30,7 @@ WindowAndStyles::WindowAndStyles ()
 // void
 void WindowAndStyles::main_time_work ()
 {
-	names::f_time = names::C_clock.restart ().asMicroseconds ();
+	names::f_time = names::clock.restart ().asMicroseconds ();
 	if (WindowAndStyles::hasFocus ())
 	{
 		names::f_time = names::f_time * 0.001;
@@ -52,8 +52,8 @@ void WindowAndStyles::main_F11 ()
 		{
 			WAS_->m_videomode = VideoMode::getFullscreenModes ()[0];
 			WAS_->m_render_texture.create (
-			    WAS_->m_videomode.width / names::u_factor_of_resolution,
-			    WAS_->m_videomode.height / names::u_factor_of_resolution);
+			    WAS_->m_videomode.width / names::m_u_factor_of_resolution,
+			    WAS_->m_videomode.height / names::m_u_factor_of_resolution);
 			WAS_->m_window.create (
 			    VideoMode (WAS_->m_videomode.width, WAS_->m_videomode.height),
 			    WAS_->m_w_game_name,
@@ -81,8 +81,8 @@ void WindowAndStyles::main_F11 ()
 			    WAS_->m_w_game_name,
 			    Style::Default);
 			WAS_->m_render_texture.create (
-			    static_cast<float> (WAS_->m_window.getSize ().x) / names::u_factor_of_resolution,
-			    static_cast<float> (WAS_->m_window.getSize ().y) / names::u_factor_of_resolution);
+			    static_cast<float> (WAS_->m_window.getSize ().x) / names::m_u_factor_of_resolution,
+			    static_cast<float> (WAS_->m_window.getSize ().y) / names::m_u_factor_of_resolution);
 
 			WAS_->m_V_camera.setCenter (Vector2f (
 			    static_cast<float> (WAS_->m_window.getSize ().x) * 0.5,
@@ -104,27 +104,27 @@ void WindowAndStyles::main_event ()
 {
 	WindowAndStyles* WAS_ = getClass ();
 
-	while (WAS_->m_window.pollEvent (names::E_event))
+	while (WAS_->m_window.pollEvent (names::event))
 	{
-		if (names::E_event.type == Event::Closed or (WindowAndStyles::hasFocus () and Keyboard::isKeyPressed (Keyboard::Escape)))
+		if (names::event.type == Event::Closed or (WindowAndStyles::hasFocus () and Keyboard::isKeyPressed (Keyboard::Escape)))
 		{
 			close ();
 		}
 	}
-	if (names::E_event.type == sf::Event::Resized)
+	if (names::event.type == sf::Event::Resized)
 	{
 		WindowAndStyles* WAS_ = getClass ();
 
 		// camera
 		WAS_->m_V_camera.setCenter (Vector2f (
-		    static_cast<float> (names::E_event.size.width) * 0.5,
-		    static_cast<float> (names::E_event.size.height) * 0.5));
+		    static_cast<float> (names::event.size.width) * 0.5,
+		    static_cast<float> (names::event.size.height) * 0.5));
 		WAS_->m_V_camera.setSize (Vector2f (
-		    static_cast<float> (names::E_event.size.width),
-		    static_cast<float> (names::E_event.size.height)));
+		    static_cast<float> (names::event.size.width),
+		    static_cast<float> (names::event.size.height)));
 		WAS_->m_render_texture.create (
-		    WAS_->m_V_camera.getSize ().x / names::u_factor_of_resolution,
-		    WAS_->m_V_camera.getSize ().y / names::u_factor_of_resolution);
+		    WAS_->m_V_camera.getSize ().x / names::m_u_factor_of_resolution,
+		    WAS_->m_V_camera.getSize ().y / names::m_u_factor_of_resolution);
 		WAS_->m_render_texture.setView (WAS_->m_V_camera);
 		WAS_->m_window.setView (WAS_->m_V_camera);
 
@@ -188,7 +188,7 @@ void WindowAndStyles::clear_display ()
 
 	WAS_->m_render_texture.display ();
 	Sprite S (WAS_->m_render_texture.getTexture ());
-	S.setScale (names::u_factor_of_resolution, names::u_factor_of_resolution);
+	S.setScale (names::m_u_factor_of_resolution, names::m_u_factor_of_resolution);
 
 	if (names::game_status == GameStatus::introduction)
 	{
@@ -232,8 +232,8 @@ void WindowAndStyles::start ()
 	    VideoMode (WAS_->m_videomode.width, WAS_->m_videomode.height),
 	    WAS_->m_w_game_name);
 	WAS_->m_render_texture.create (
-	    static_cast<float> (WAS_->m_window.getSize ().x) / names::u_factor_of_resolution,
-	    static_cast<float> (WAS_->m_window.getSize ().y) / names::u_factor_of_resolution);
+	    static_cast<float> (WAS_->m_window.getSize ().x) / names::m_u_factor_of_resolution,
+	    static_cast<float> (WAS_->m_window.getSize ().y) / names::m_u_factor_of_resolution);
 	WAS_->m_SW_now = Default;
 	WAS_->m_window.setIcon (WAS_->m_image.getSize ().x, WAS_->m_image.getSize ().y, WAS_->m_image.getPixelsPtr ());
 

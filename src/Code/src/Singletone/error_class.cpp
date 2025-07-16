@@ -27,7 +27,7 @@ Error_class::Error_class ()
 {
 	for (size_t st (0); st < e_error_text::error; st++)
 	{
-		m_text[st].setFont (names::F_pixel);
+		m_text[st].setFont (names::font);
 		m_text[st].setFillColor (m_C_text_color);
 	}
 	m_rectangle_shape.setFillColor (m_C_rectangle_shape_color);

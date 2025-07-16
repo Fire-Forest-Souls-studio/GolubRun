@@ -13,7 +13,7 @@ Button::Button (const string& s)
 {
 	m_text.setString (s);
 	m_text.setCharacterSize (names::f_font_hitbox_scale);
-	m_text.setFont (names::F_pixel);
+	m_text.setFont (names::font);
 	m_text.setFillColor (names::C_font_hitbox);
 	m_rectangle_shape.setOutlineColor (names::C_font_hitbox);
 	m_rectangle_shape.setOutlineThickness (1);
@@ -62,7 +62,7 @@ void Button::setString (const string& s)
 {
 	m_text.setString (s);
 	m_text.setCharacterSize (names::f_font_hitbox_scale);
-	m_text.setFont (names::F_pixel);
+	m_text.setFont (names::font);
 	m_text.setFillColor (names::C_font_hitbox);
 	m_rectangle_shape.setOutlineColor (names::C_font_hitbox);
 	m_rectangle_shape.setOutlineThickness (1);
