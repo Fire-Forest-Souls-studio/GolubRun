@@ -20,7 +20,10 @@ int main (int argc, char* argv[0])
 	// Under
 
 	srand (time (NULL));
-	names::LoadFromMemory (names::F_pixel, pixel_font_by_BLACKFIRE_otf, pixel_font_by_BLACKFIRE_otf_size, "Shrift/pixel_font_by_BLACKFIRE.otf");
+	names::LoadFromMemory (names::font,
+	                       pixel_font_by_BLACKFIRE_otf,
+	                       pixel_font_by_BLACKFIRE_otf_size,
+	                       "Shrift/pixel_font_by_BLACKFIRE.otf");
 	names::SetPath (argv[0]);
 
 	///////////////////////////
