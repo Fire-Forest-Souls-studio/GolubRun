@@ -1,17 +1,43 @@
-#Исполняемый файл
+### Сгенерированные компилятором ###
 /GolubRun
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.class
+*.jar
+*.war
+*.ear
+*.log
 
-# Настройки VS Code
-# .vscode/
-# .clang-format
-# .editorconfig
+### VS Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/c_cpp_properties.json
 
 # Системные
 .DS_Store
 Thumbs.db
 
-# Папка obj
+### Папки сборки ###
+build/
+bin/
 obj/
+out/
+x64/
+x86/
+Debug/
+Release/
+CMakeFiles/
 
 # Корки
 *.out
