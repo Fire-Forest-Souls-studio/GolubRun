@@ -1,13 +1,8 @@
 name: Build Linux
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,7 +28,7 @@ jobs:
         run: |
           make
 
-      # 6. Сохраняем собранный артефакт для последующего использования
+      # 5. Сохраняем собранный артефакт для последующего использования
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
