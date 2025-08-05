@@ -24,9 +24,6 @@ jobs:
       - name: Build with Make
         run: make
 
-      - name: List build artifacts
-        run: ls -la build/
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
